@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <sys/types.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -28,5 +29,5 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void swap(int *a, int *b);
 ssize_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size);
-void lomuto_sort(int *array, ssize_t low, ssize_t high, size_t size);
+void lomuto_sort(int *array, int low, int high, size_t size);
 #endif
