@@ -31,16 +31,17 @@ void insertion_sort_list(listint_t **list)
 			(*list)->prev = temp;
 			*list = temp;
 		}
-		else if (swap_node->next != temp)
+		else if (swap_node->n > temp->n)
 		{
 			current = current->next;
 			temp->prev->next = temp->next;
 			if (temp->next != NULL)
 				temp->next->prev = temp->prev;
-			temp->next = swap_node->next;
-			temp->prev = swap_node;
-			swap_node->next->prev = temp;
-			swap_node->next = temp;
+			temp->next = swap_node;
+			temp->prev = swap_node->prev;
+			if (swap_node->prev != NULL)
+				swap_node->prev->next = temp;
+			swap_node->prev = temp;
 		}
 		else
 			current = current->next;
