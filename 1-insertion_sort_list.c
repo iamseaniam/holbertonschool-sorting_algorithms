@@ -30,6 +30,7 @@ void insertion_sort_list(listint_t **list)
 			temp->prev = NULL;
 			(*list)->prev = temp;
 			*list = temp;
+			print_list((const listint_t *)*list);
 		}
 		else if (swap_node->n > temp->n)
 		{
@@ -42,9 +43,9 @@ void insertion_sort_list(listint_t **list)
 			if (swap_node->prev != NULL)
 				swap_node->prev->next = temp;
 			swap_node->prev = temp;
+			print_list((const listint_t *)*list);
 		}
 		else
 			current = current->next;
-		print_list((const listint_t *)*list);
 	}
 }
